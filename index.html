@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Discord Webhook - Tamino1230'</title>
+        <link rel="stylesheet" href="src/styles.css">
+    </head>
+    <body id="top">
+
+
+        <!--- HEADER -->
+        <div class="header-text">
+            <p class="headline">Discord Webhook</p>
+        </div>
+        <div class="header-description">
+            <p class="description">Manager</p>
+        </div>
+        <div class="header-made-by border-bottom">
+            <p class="made-by">by <a class="creator-link" href="https://discord.com/users/702893526303637604" target="_blank">Tamino1230</a></p>
+        </div>
+
+        
+
+        <!--- NAVIGATION -->
+        <div class="navigation" id="nav">
+            <a class="navi-btn" href="https://tamino1230.github.io">#main</a>
+            <a class="navi-btn" href="#top">#top</a>
+            <a class="navi-btn" href="#content">#content</a>
+            <a class="navi-btn" href="#try-out">#try-out</a>
+            <a class="navi-btn" href="#footer">#footer</a>
+        </div>
+
+
+        <!--- WEBSITE CONTENT -->
+        <div style="height: 60px;" id="content"></div>
+        <!-- style="height: 10000px;" -->
+        <div class="website-content-container">
+            <div class="explanation-sections-wrapper">
+                <div class="explanation-section">
+                    <h2 class="section-title">Is it safe?</h2>
+                    <p class="section-text">
+                        Yes, this tool is safe to use. It does not store or log any of your webhook URLs or messages.
+                        All data is processed locally in your browser, ensuring your privacy and security.
+                        <br><br>
+                        <strong>Note:</strong> Always be cautious when using third-party tools with your Discord Webhooks.
+                        Make sure to only use trusted sources and never share your webhook URL with anyone.
+                        <br><br>
+                        <strong>Disclaimer:</strong> This tool is not affiliated with Discord.
+                        Use it at your own risk. The creator is not responsible for any misuse or abuse of the tool.
+                        <br><br>
+                        You can check out the Source Code on <a href="https://github.com/Tamino1230/tamino1230.github.io" target="_blank">GitHub</a>.
+                        <br><br><br>
+                    </p>
+                </div>
+                <div class="explanation-section">
+                    <h2 class="section-title">What is a Discord Webhook?</h2>
+                    <p class="section-text">
+                        A Discord Webhook is a way to send automated messages and updates to a Discord channel. 
+                        It allows you to integrate external applications or services with your Discord server.
+                    </p>
+                    <img style="margin-top: 20px; margin-bottom: 20px;" src="src/images/webhook-example.png" height="350px" width="570px" alt="Discord Webhook Example" class="explanation-image">
+                </div>
+                <div class="explanation-section">
+                    <h2 class="section-title">How to Use This Manager?</h2>
+                    <p class="section-text">
+                        This tool helps you manage your Discord Webhooks easily. You can create normal messages or embed messages 
+                        with custom titles, descriptions, and colors. Instead of programming it by yourself!
+                    </p>
+                    <img style="margin-top: 20px; margin-bottom: 20px;" src="src/images/usage-guide.png" height="350px" width="570px" alt="Usage Guide" class="explanation-image">
+                </div>
+                <div class="explanation-section">
+                    <h2 class="section-title">Why Use Embed Messages?</h2>
+                    <p class="section-text">
+                        Embed messages allow you to format your content in a visually appealing way. 
+                        They support rich text, images, and custom colors, making your messages stand out.
+                    </p>
+                    <img style="margin-top: 20px; margin-bottom: 20px;" src="src/images/embed-example.png" height="350px" width="570px" alt="Embed Message Example" class="explanation-image">
+                </div>
+            </div>
+            <div style="height: 100px;" id="try-out"></div>
+            <h2 style="margin-bottom: 30px; margin-top: 20px;" class="section-title">Try it out here now: </h2>
+            <div class="box">
+                <p class="explain-text">Discord Webhook: </p>
+                <input type="text" id="webhookUrl" class="pastel-input" placeholder="Discord Webhook Link...">
+                <script>
+                    const webhookInput = document.querySelector('#webhookUrl');
+
+                    // Load saved value from localStorage on page load
+                    window.addEventListener('load', () => {
+                        const savedWebhook = localStorage.getItem('webhookUrl');
+                        if (savedWebhook) {
+                            webhookInput.value = savedWebhook;
+                        }
+                    });
+
+                    // Save value to localStorage on input change
+                    webhookInput.addEventListener('input', () => {
+                        localStorage.setItem('webhookUrl', webhookInput.value);
+                    });
+                </script>
+            </div>
+            <div class="box">
+                <p class="explain-text">Message Type: </p>
+                <select id="messageType" class="pastel-input">
+                    <option value="normal">Normal Message</option>
+                    <option value="embed">Embed Message</option>
+                </select>
+            </div>
+            <div class="box">
+                <p class="explain-text">Message Content: </p>
+                <textarea id="messageContent" class="pastel-input" placeholder="Enter your message here..."></textarea>
+            </div>
+            <div class="box embed-settings" style="display: none;">
+                <p class="explain-text">Embed Title: </p>
+                <input type="text" id="embedTitle" class="pastel-input" placeholder="Embed Title...">
+                <p class="explain-text">Embed Description: </p>
+                <textarea id="embedDescription" class="pastel-input" placeholder="Embed Description..."></textarea>
+                <p class="explain-text">Embed Footer: </p>
+                <input type="text" id="embedFooter" class="pastel-input" placeholder="Embed Footer...">
+                <p class="explain-text">Embed Color: </p>
+                <input type="color" id="embedColor" class="pastel-input">
+                <p class="explain-text">Embed Image URL: </p>
+                <input type="text" id="embedImageUrl" class="pastel-input" placeholder="Embed Image URL...">
+            </div>
+            <div class="box">
+                <button id="sendButton" class="navi-btn">Send</button>
+            </div>
+            <div style="margin-bottom: 100px;"></div>
+            <script>
+                const messageTypeSelect = document.querySelector('#messageType');
+                const embedSettings = document.querySelector('.embed-settings');
+
+                messageTypeSelect.addEventListener('change', () => {
+                    if (messageTypeSelect.value === 'embed') {
+                        embedSettings.style.display = 'block';
+                    } else {
+                        embedSettings.style.display = 'none';
+                    }
+                });
+                const messageContentBox = document.querySelector('#messageContent').parentElement;
+
+                messageTypeSelect.addEventListener('change', () => {
+                    if (messageTypeSelect.value === 'embed') {
+                        embedSettings.style.display = 'block';
+                        messageContentBox.style.display = 'none';
+                    } else {
+                        embedSettings.style.display = 'none';
+                        messageContentBox.style.display = 'block';
+                    }
+                });
+            </script>
+        </div>
+        <script src="src/script.js"></script>
+    </body>
+    <footer id="footer">
+
+
+        <!--- FOOTER -->
+        <div class="links border-top">
+            <a href="https://github.com/Tamino1230" class="link-btn" target="_blank">@Github</a>
+            <a href="https://discord.gg/8b8R9qCBF8" class="link-btn" target="_blank">@Discord_Server</a>
+            <a href="https://twitter.com/intent/tweet?text=Hey!%20Look%20at%20this%20Discord%20Webhook%20Manager%20Website%2C%20without%20knowing%20what%20to%20do%3A%20https%3A%2F%2Ftamino1230.github.io%0Aby%20https%3A%2F%2Fgithub.com%2Ftamino1230&url=" class="link-btn" target="_blank">@Share</a>
+        </div>
+        <div class="footer-down-right">
+            <a href="https://github.com/Tamino1230/tamino1230/blob/main/README.md">Tamino1230 2025</a>
+        </div>
+    </footer>
+</html>

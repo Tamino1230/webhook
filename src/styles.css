@@ -1,0 +1,353 @@
+/*- src/styles.css */
+
+:root {
+    --headline-background-color: rgb(54, 89, 232);
+    --headline-text-size: 3.5em;
+    --description-text-size: 1.75em;
+    --header-font-color: #f4f4f4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/*- CREATOR STYLES */
+.creator-link {
+    color: var(--header-font-color);
+    text-decoration: none;
+    transition: all 0.25s;
+}
+
+.creator-link:hover {
+    color: #f8369e;
+    text-decoration: underline;
+    transition: all 0.25s;
+}
+
+/*- MAIN PART STYLES */
+body {
+    background-color: rgb(59, 59, 59);
+}
+
+.header-text {
+    display: flex;
+    justify-content: center;
+
+    padding: 35px 0px 2.5px 0px;
+    background-color: var(--headline-background-color);
+    font-family: monospace;
+    
+}
+
+.header-description {
+    display: flex;
+    justify-content: center;
+
+    padding: 2.5px 0px 6px 0px;
+    background-color: var(--headline-background-color);
+    font-family: monospace;
+}
+
+.header-made-by {
+    display: flex;
+    justify-content: center;
+
+    padding: 2.5px 0px 50px 0px;
+    background-color: var(--headline-background-color);
+    font-family: monospace;
+}
+
+
+/*- CONTAINER STYLES */
+.website-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    background-color: transparent;
+    position: sticky;
+    top: 15px;   
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 35px;
+    padding-bottom: 20px;
+
+    font-family: monospace;
+    background-color: #e4e4e4;
+}
+
+.footer-down-right {
+    display: flex;
+    justify-content: right;
+    font-family: monospace;
+    font-size: 1.3em;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    background-color: #e4e4e4;
+}
+
+.box {
+    margin-bottom: 50px;
+}
+
+.explanation-sections-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust spacing between sections */
+}
+
+.explanation-section {
+    flex: 1 1 calc(50% - 20px); /* Two sections per row */
+    box-sizing: border-box;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+
+/*- P TAG STYLES */
+.headline {
+    font-size: var(--headline-text-size);
+    color: var(--header-font-color);
+}
+
+.description {
+    font-size: var(--description-text-size);
+    color: var(--header-font-color);
+}
+
+.made-by {
+    font-size: 1.25em;
+    color: var(--header-font-color);
+}
+
+.explain-text {
+    font-size: 1.25em;
+    color: var(--header-font-color);
+}
+
+
+/*- BORDER STYLES */
+.border-bottom {
+    border-bottom: 4px solid #f4f4f4;
+}
+
+.border-top {
+    border-top: 4px solid #f4f4f4;
+}
+
+
+/*- BUTTON STYLES */
+.navi-btn {
+    background-color: #ebebeb;
+
+    padding: 15px 50px 15px 50px;
+
+    margin-left: 5px;
+    margin-right: 5px;
+
+    text-decoration: none;
+    color: #242424;
+    
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 1.1em;
+    transition: all 0.25s;
+}
+
+.navi-btn:hover {
+    color: var(--header-font-color);
+    background-color: #212121;
+    border-radius: 50px;
+    transition: all 0.25s;
+    cursor: pointer;
+}
+
+.navi-btn:active {
+    background-color: #444443;
+    transition: all 0.25s;
+}
+
+.link-btn {
+    color: #282828;
+    text-decoration: none;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2em;
+    transition: all 0.25s;
+}
+
+.link-btn:hover {
+    color: #094e80;
+    text-decoration: underline;
+
+}
+
+.pastel-input {
+    padding: 12px 20px;
+    width: 250px;
+    border: 2px solid #a0e7e5; 
+    border-radius: 12px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(160, 231, 229, 0.2);
+  }
+
+  .pastel-input:focus {
+    outline: none;
+    border-color: #ffb3c1;
+    box-shadow: 0 0 8px #ffb3c1;
+  }
+
+  ::placeholder {
+    color: #bbb;
+  }
+
+.section-text {
+    color: var(--header-font-color);
+}
+
+.section-title {
+    color: var(--header-font-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-text, .header-description, .header-made-by {
+        padding: 15px 0;
+        font-size: 0.85em;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .navi-btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .explanation-sections-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .explanation-section {
+        margin: 0 15px;
+        flex: 1 1 100%;
+    }
+
+    .explanation-section img {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .section-text {
+        font-size: 1em;
+        line-height: 1.5;
+        color: #e4e4e4; /* Improve text contrast */
+    }
+
+    .pastel-input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .box {
+        margin-bottom: 40px;
+    }
+
+    .footer-down-right {
+        justify-content: center;
+        font-size: 1em;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .headline {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .description {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    .navi-btn {
+        padding: 8px 15px;
+        font-size: 0.8em;
+    }
+
+    .explanation-section img {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .section-title {
+        font-size: 1.3em;
+        text-align: center;
+    }
+
+    .section-text {
+        font-size: 0.9em;
+        line-height: 1.4;
+        color: #f4f4f4; /* Ensure readability */
+    }
+
+    .website-content-container {
+        padding: 0 10px;
+    }
+
+    .box {
+        margin-bottom: 30px;
+    }
+
+    .footer-down-right {
+        font-size: 0.9em;
+    }
+
+    .website-content-container {
+        padding: 0 10px;
+    }
+
+    .box {
+        margin-bottom: 30px;
+    }
+}
